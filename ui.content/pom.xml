@@ -13,16 +13,17 @@
  |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ====================================================================== -->
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.adobe</groupId>
+        <groupId>com.github.qingsong</groupId>
         <artifactId>training</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,8 +32,8 @@
     <!-- ====================================================================== -->
     <artifactId>training.ui.content</artifactId>
     <packaging>content-package</packaging>
-    <name>TrainingProject - UI content</name>
-    <description>UI content package for TrainingProject</description>
+    <name>training - UI content</name>
+    <description>UI content package for training</description>
 
     <!-- <scm>
         <connection></connection>
@@ -117,12 +118,12 @@
                     <filterSource>${basedir}/META-INF/vault/filter.xml</filterSource>
                     <verbose>true</verbose>
                     <failOnError>true</failOnError>
-                    <group>TrainingProject Content Package</group>
+                    <group>training</group>
                     <embeddeds>
                         <embedded>
-                            <groupId>com.adobe</groupId>
+                            <groupId>com.github.qingsong</groupId>
                             <artifactId>training.core</artifactId>
-                            <target>/apps/trainingproject/install</target>
+                            <target>/apps/training/install</target>
                         </embedded>
                     </embeddeds>
                 </configuration>
@@ -137,6 +138,7 @@
         <profile>
             <id>autoInstallPackage</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
@@ -163,6 +165,7 @@
         <profile>
             <id>autoInstallPackagePublish</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
@@ -193,15 +196,15 @@
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
-            <groupId>com.adobe</groupId>
+            <groupId>com.github.qingsong</groupId>
             <artifactId>training.core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.adobe.aem</groupId>
             <artifactId>uber-jar</artifactId>
-    		<classifier>obfuscated-apis</classifier>
+            <classifier>obfuscated-apis</classifier>
         </dependency>
 
     </dependencies>

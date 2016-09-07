@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/content/trainingproject"/>
-    <filter root="/content/dam/trainingproject"/>
+    <filter root="/content/we-train"/>
+    <filter root="/content/dam/we-train"/>
 </workspaceFilter>

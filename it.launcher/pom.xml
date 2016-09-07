@@ -13,13 +13,14 @@
  |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.adobe</groupId>
+        <groupId>com.github.qingsong</groupId>
         <artifactId>training</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -28,8 +29,8 @@
     <!-- ====================================================================== -->
     <artifactId>training.it.launcher</artifactId>
     <packaging>jar</packaging>
-    <name>TrainingProject - Integration Tests Launcher</name>
-    <description>Integration Tests Launcher for TrainingProject</description>
+    <name>training - Integration Tests Launcher</name>
+    <description>Integration Tests Launcher for training</description>
 
     <!-- <scm>
         <connection></connection>
@@ -63,10 +64,13 @@
         <keepJarRunning>false</keepJarRunning>
         
         <!-- Set this to run tests against a specific hostname, if test.server.url is not set-->
+        <test.server.hostname />
 
         <!-- Set this to use a different username for remote execution of sling junit tests -->
+        <test.server.username />
 
         <!-- Set this to use a different password for remote execution of sling junit tests -->
+        <test.server.password />
         
         <!-- Options for the VM that executes our runnable jar -->
         <jar.executor.vm.options>-Xmx512m</jar.executor.vm.options>
@@ -75,6 +79,7 @@
         <sling.testing.timeout.multiplier>1.0</sling.testing.timeout.multiplier>
         
         <!-- Set this to run the executable jar in a specified filesystem folder -->
+        <jar.executor.work.folder />
         
         <!-- Options for the jar to execute. $JAREXEC_SERVER_PORT$ is replaced by the
             selected port number -->
@@ -173,6 +178,7 @@
         <profile>
             <id>integrationTests</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
@@ -317,14 +323,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.adobe</groupId>
+            <groupId>com.github.qingsong</groupId>
             <artifactId>training.it.tests</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.adobe</groupId>
+            <groupId>com.github.qingsong</groupId>
             <artifactId>training.core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
