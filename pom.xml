@@ -170,7 +170,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                               <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                               <!--<outputDirectory>${project.build.directory}/classes</outputDirectory>-->
                     </configuration>
                     <dependencies>
                         <dependency>
